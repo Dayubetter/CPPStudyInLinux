@@ -21,6 +21,15 @@ void func() {
     cout << sizeof(cstr) << endl; // 获取指针大小 8字节
     cout << strlen(cstr) << endl;
 }
+
+void func2(int *x,int *y) {
+    int z = *x;
+    *x = *y;
+    *y = z;
+}
 int main() {
     func();
+    int x = 10, y = 20;
+    func2(&x,&y);
+    cout << x << y <<endl;
 }
